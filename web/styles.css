@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #4299e1;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #3182ce;
+}
+
+.btn.secondary {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn.secondary:hover {
+    background-color: #cbd5e0;
+}
+
+.section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.decks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.deck-card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.deck-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.card-review {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-content {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin-bottom: 1.5rem;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.review-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn.difficulty {
+    flex: 1;
+    max-width: 120px;
+}
+
+.btn.difficulty.hard {
+    background-color: #fc8181;
+    color: white;
+}
+
+.btn.difficulty.good {
+    background-color: #68d391;
+    color: white;
+}
+
+.btn.difficulty.easy {
+    background-color: #4299e1;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.chart-container {
+    margin-top: 2rem;
+    height: 300px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .card-input {
+        grid-template-columns: 1fr;
+    }
+}

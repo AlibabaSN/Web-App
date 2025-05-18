@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceCards - Spaced Repetition Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SpaceCards</h1>
+            <nav>
+                <button id="createDeckBtn" class="btn primary">Create Deck</button>
+                <button id="statsBtn" class="btn">Statistics</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="deckList" class="section active">
+                <h2>Your Decks</h2>
+                <div class="decks-grid" id="decksContainer">
+                    <!-- Decks will be added here dynamically -->
+                </div>
+            </section>
+
+            <section id="createDeck" class="section hidden">
+                <h2>Create New Deck</h2>
+                <form id="newDeckForm">
+                    <input type="text" id="deckTitle" placeholder="Deck Title" required>
+                    <div id="cardsContainer">
+                        <div class="card-input">
+                            <input type="text" placeholder="Front" required>
+                            <input type="text" placeholder="Back" required>
+                        </div>
+                    </div>
+                    <button type="button" id="addCardBtn" class="btn secondary">Add Card</button>
+                    <button type="submit" class="btn primary">Save Deck</button>
+                </form>
+            </section>
+
+            <section id="reviewSection" class="section hidden">
+                <div class="card-review">
+                    <div class="card-content">
+                        <div class="card-front" id="cardFront"></div>
+                        <div class="card-back hidden" id="cardBack"></div>
+                    </div>
+                    <div class="review-buttons hidden" id="reviewButtons">
+                        <button class="btn difficulty hard">Hard</button>
+                        <button class="btn difficulty good">Good</button>
+                        <button class="btn difficulty easy">Easy</button>
+                    </div>
+                    <button class="btn primary" id="flipBtn">Flip Card</button>
+                </div>
+            </section>
+
+            <section id="statsSection" class="section hidden">
+                <h2>Review Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Cards Due Today</h3>
+                        <p id="dueToday">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Cards Reviewed</h3>
+                        <p id="totalReviewed">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Success Rate</h3>
+                        <p id="successRate">0%</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="reviewChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
